@@ -1,6 +1,5 @@
 FROM visualops/mongod:latest
 
 EXPOSE 8290
-EXPOSE 8080
 
-ENTRYPOINT ["/usr/bin/mongos"]
+ENTRYPOINT ["/usr/bin/mongos", "-f", "/visualops/conf/mongos.conf"]

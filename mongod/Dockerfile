@@ -25,13 +25,11 @@ VOLUME ["/visualops/db"]
 WORKDIR /visualops
 
 # Define entrypoint
-ENTRYPOINT ["/usr/bin/mongod"]
+ENTRYPOINT ["/usr/bin/mongod", "-f", "/visualops/conf/mongod.conf"]
 
 # Define default command.
 CMD ["--help"]
 
 # Expose ports.
 #   - 8290: process
-#   - 8080: http
 EXPOSE 8290
-EXPOSE 8080
